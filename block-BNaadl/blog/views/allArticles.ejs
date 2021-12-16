@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <span><a href="/">Home</a></span>
+        <h1>Articles List</h1>
+        <span><a href="/articles">Articles List</a> | <a href="/articles/new">Add Article</a></span>
+      </header>
+      <% articles.forEach(article => { %>
+        <section>
+            <span><%= article.title %></span>
+            <span><a href='/articles/<%= article._id %>'>Details</a></span>
+        </section>
+     <% }) %>
+</body>
+</html>

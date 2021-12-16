@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= article.title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <span><a href="/">Home</a></span>
+        <h1><%= article.author %></h1>
+        <span><a href="/articles">Articles List</a> | <a href="/articles/new">Add Article</a></span>
+      </header>
+      <div class="container">
+        <div class="flex-20">
+            <div class="card">
+                <div class="card_body">
+                    <h2 class="card_title"><%= article.title %></h2>
+                    <p><%= article.description %></p>
+                    <p class="card_author">by <a href="/articles/<%= article._id %>" class="author_link"><%= article.author %></a></p>
+                    <a href="/articles/<%= article._id %>/increment"><i class="fa fa-plus"></i></a> <span class="likes"><%= article.likes %></span> <a href="/articles/<%= article._id %>/decrement"><i class="fa fa-minus"></i></a>
+                    <a href="/articles/<%= article._id %>/edit" class="read_more">Edit</a> <a href="/articles/<%= article._id %>/delete" class="read_more">Delete</a>
+                </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
