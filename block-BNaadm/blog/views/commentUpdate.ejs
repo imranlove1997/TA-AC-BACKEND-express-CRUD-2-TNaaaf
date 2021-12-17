@@ -1,0 +1,11 @@
+<%- include('partials/header') -%>
+<div class="container">
+    <form action="/comments/<%= comment.id %>" method="POST">
+        <div class="form-control">
+            <input type="text" name="author" id="author" value="<%= comment.author %>">
+            <textarea name="content" id="content" cols="30" rows="10"><%= comment.content %></textarea>
+            <input type="submit" value="Update Comment">
+        </div>
+    </form>
+</div>
+<%- include('partials/footer') -%>

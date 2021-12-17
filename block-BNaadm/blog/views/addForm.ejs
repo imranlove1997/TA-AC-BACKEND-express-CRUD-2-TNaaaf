@@ -1,0 +1,17 @@
+<%- include('partials/header') -%>
+<div class="container">
+    <form action="/articles" method="POST">
+        <div class="form-control">
+            <label for="article">Article</label>
+            <input type="text" name="title" id="title" placeholder="Enter Article" required>
+            <label for="description">Description</label>
+            <textarea name="description" id="description" cols="30" rows="10" placeholder="Enter Description" required></textarea>
+            <label for="tags">Tags</label>
+            <input type="text" name="tags" id="tags" placeholder="Enter Tags" required>
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" placeholder="Enter Author" required>
+            <input type="submit" value="Add Article">
+        </div>
+    </form>
+</div>
+<%- include('partials/footer') -%>
