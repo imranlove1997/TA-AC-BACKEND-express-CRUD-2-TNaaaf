@@ -1,0 +1,29 @@
+<%- include('partials/header') -%>
+<div class="container">
+    <div class="flex-20">
+        <div class="card">
+            <div class="card_body">
+                <h2 class="card_title"><%= article.title %></h2>
+                <p><%= article.description %></p>
+                <p class="card_author">by <a href="/articles/<%= article._id %>" class="author_link"><%= article.author %></a></p>
+                <a href="/articles/<%= article._id %>/increment"><i class="fa fa-plus"></i></a> <span class="likes"><%= article.likes %></span> <a href="/articles/<%= article._id %>/decrement"><i class="fa fa-minus"></i></a>
+                <a href="/articles/<%= article._id %>/edit" class="read_more">Edit</a> <a href="/articles/<%= article._id %>/delete" class="read_more">Delete</a>
+            </div>
+    </div>
+    <h3>Add Comment</h3>
+    <form action="/articles/<%= article._id %>/comment" method="POST">
+        <input type="text" name="author" id="author" autocomplete="off" placeholder="Enter Name" required>
+        <textarea name="content" id="comment" cols="30" rows="5" placeholder="Enter Comment" style="resize: none; width: 100%;"></textarea>
+        <input type="submit" value="Add Comment">
+    </form>
+    <% comments.forEach(comment => { %>
+        <div class="box">
+        <h4><%= comment.content %></h4>
+        <p>By: <%= comment.author %></p>
+        <span class="span-likes"><a href="/comments/<%= comment._id %>/likes"><i class="fa fa-thumbs-up"></i></a> <%= comment.likes %> | <a href="/comments/<%= comment._id %>/dislikes"><i class="fa fa-thumbs-down"></i></a><%= comment.dislikes %></span>
+        <span><a href="/comments/<%= comment._id %>/edit">Edit</a> | <a href="/comments/<%= comment._id %>/delete">Delete</a></span>
+    </div>
+   <% }) %>
+</div>
+</div>
+<%- include('partials/footer') -%>

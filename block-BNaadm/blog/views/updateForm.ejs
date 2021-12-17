@@ -1,0 +1,17 @@
+<%- include('partials/header') -%>
+<div class="container">
+    <form action="/articles/<%= article._id %>" method="POST">
+        <div class="form-control">
+            <label for="article">Article</label>
+            <input type="text" name="title" id="title" placeholder="Enter Article" value="<%= article.title %>">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" cols="30" rows="10" placeholder="Enter Description"><%= article.description %></textarea>
+            <label for="tags">Tags</label>
+            <input type="text" name="tags" id="tags" placeholder="Enter Tags" value="<%= article.tags %>">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" placeholder="Enter Author" value="<%= article.author %>">
+            <input type="submit" value="Update Article">
+        </div>
+    </form>
+</div>
+<%- include('partials/footer') -%>
