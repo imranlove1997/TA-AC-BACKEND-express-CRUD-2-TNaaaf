@@ -1,0 +1,13 @@
+<%- include('content/header') -%>
+    <%- include('content/navbar') -%>
+    <div class="container">
+    <div class="author">
+        <img src="<%= book.cover_image %>" alt="">
+        <h2>Title:- <%= book.title %></h2>
+        <h4>Summary:- <%= book.summary %></h4>
+        <p>Publication:- <%= book.publication %></p>
+        <p>Author:- <a href="/authors/<%= book.author.id %>"><%= book.author.name %></a></p>
+        <p>Category:-<% book.category.forEach(categ => { %> <%= categ.name %> <% }) %></p>
+    </div>
+  </div>
+<%- include('content/footer') -%>
