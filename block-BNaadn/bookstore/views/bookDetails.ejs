@@ -1,0 +1,15 @@
+<%- include('content/header') -%>
+    <%- include('content/navbar') -%>
+  <main>
+      <section>
+          <div class="container flex align-items space-between flex-wrap">
+              <% books.forEach(book => { %>
+          <article class="book flex-20">
+              <img class="img-book" src="<%= book.cover_image %>" alt="Dummy Image">
+              <h3 class="article-title"><a href="/books/<%= book._id %>"><%= book.title %></a></h3>
+          </article>
+       <% }) %>
+        </div>
+      </section>
+  </main>
+<%- include('content/footer') -%>

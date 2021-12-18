@@ -1,0 +1,14 @@
+<%- include('content/header') -%>
+    <%- include('content/navbar') -%>
+    <div class="container">
+    <div class="content">
+        <p>Add Author</p>
+        <form action="/authors" method="POST">
+            <input type="text" name="name" id="name" placeholder="Enter Name" class="form-control" required>
+            <input type="email" name="email" id="email" placeholder="Enter Email" class="form-control" required>
+            <input type="text" name="country" id="country" placeholder="Enter Country" class="form-control" required>
+            <input class="submit-btn" type="submit" value="Add Author">
+        </form>
+    </div>
+  </div>
+<%- include('content/footer') -%>

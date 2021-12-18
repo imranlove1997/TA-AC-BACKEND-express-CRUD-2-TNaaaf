@@ -1,0 +1,28 @@
+<%- include('content/header') -%>
+    <%- include('content/navbar') -%>
+    <div class="container">
+        <div class="content">
+            <p>Add Book</p>
+            <form action="/books" method="POST">
+                <input type="text" name="title" id="title" placeholder="Enter Title" class="form-control" required>
+                <textarea name="summary" id="summary" cols="30" rows="10" placeholder="Enter Summary" class="form-control"></textarea>
+                <input type="text" name="publication" id="publication" placeholder="Enter Year Of Publication" class="form-control" required>
+                <select name="author" id="author" class="form-control">
+                    <option>Choose an author</option>
+                    <% authors.forEach(author => { %>
+                    <option value="<%= author.id %>"><%= author.name %></option>
+                    <% }) %>
+                </select>
+                <select name="category" class="form-control" id="category">
+                    <option>Select any category</option>
+                    <% categories.forEach(category => { %>
+                        <option value="<%= category.id %>"><%= category.name %></option>
+                   <% }) %>
+                    
+                </select>
+                <input type="text" name="cover_image" id="cover_image" placeholder="Enter Url of Image" required class="form-control">
+                <input class="submit-btn" type="submit" value="Add Book">
+            </form>
+        </div>
+      </div>
+<%- include('content/footer') -%>

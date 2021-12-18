@@ -1,0 +1,12 @@
+<%- include('content/header') -%>
+    <%- include('content/navbar') -%>
+    <div class="container">
+    <div class="content">
+        <p>Add Category</p>
+        <form action="/categories" method="POST">
+            <input type="text" name="name" id="name" placeholder="Enter Name" class="form-control" required>
+            <input class="submit-btn" type="submit" value="Add Category">
+        </form>
+    </div>
+  </div>
+<%- include('content/footer') -%>

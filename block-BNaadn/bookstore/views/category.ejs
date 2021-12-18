@@ -1,0 +1,10 @@
+<%- include('content/header') -%>
+    <%- include('content/navbar') -%>
+    <div class="container">
+        <ol>
+            <% categories.forEach(category => { %>
+                <li class="list-type"><%= category.name %></li>
+           <% }) %>
+        </ol>
+      </div>
+<%- include('content/footer') -%>
